@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" width="100%" height="100%">
+  <defs>
+    <linearGradient id="churn-shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E50914"/>
+      <stop offset="50%" stop-color="#7B2CBF"/>
+      <stop offset="100%" stop-color="#0057FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ChurnWise Hex Shield Icon -->
+  <g transform="translate(14, 15)">
+    <path d="M 30 0 L 58 15 L 58 45 L 30 60 L 2 45 L 2 15 Z" fill="url(#churn-shield-grad)"/>
+    <!-- Internal Retention Pulse Waves -->
+    <path d="M 12 30 L 22 30 L 27 18 L 33 42 L 38 30 L 48 30" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="86" y="44" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34px" letter-spacing="-0.5px">Churn<tspan fill="#00D2FF">Wise</tspan></text>
+  <text x="88" y="62" fill="rgba(255,255,255,0.7)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11px" letter-spacing="2px">STREAMING RETENTION AI</text>
+</svg>

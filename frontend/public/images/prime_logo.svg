@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="100%" height="100%">
+  <defs>
+    <linearGradient id="prime-cyan-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00A8E1"/>
+      <stop offset="100%" stop-color="#00D2FF"/>
+    </linearGradient>
+  </defs>
+
+  <text x="16" y="48" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="44px" letter-spacing="-1.5px">prime</text>
+  <text x="145" y="48" fill="#00A8E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="40px" letter-spacing="-0.5px">video</text>
+  <path d="M 22 58 C 55 76, 98 76, 128 58 C 130 56.5, 133 58.5, 131.5 60.5 C 99 83.5, 52 83.5, 19 60.5 C 17.5 59, 19.8 56.5, 22 58 Z" fill="url(#prime-cyan-grad)"/>
+  <path d="M 126 53 L 138 60 L 128 69 C 127 67, 128 64, 130 62.5 C 128 60, 126.5 56, 126 53 Z" fill="url(#prime-cyan-grad)"/>
+</svg>

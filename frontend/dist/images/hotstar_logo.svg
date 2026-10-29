@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" width="100%" height="100%">
+  <defs>
+    <linearGradient id="star-spark-hotstar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF066"/>
+      <stop offset="40%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#FF4500"/>
+    </linearGradient>
+    <linearGradient id="jio-bg-hotstar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E74F4"/>
+      <stop offset="100%" stop-color="#004BBB"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(12, 18)">
+    <rect x="0" y="0" width="64" height="54" rx="15" fill="url(#jio-bg-hotstar)"/>
+    <text x="32" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="28px" text-anchor="middle" font-style="italic" letter-spacing="-0.5px">Jio</text>
+  </g>
+
+  <g transform="translate(86, 18)">
+    <path d="M 27 0 L 32 18 L 48 13 L 36 26 L 54 33 L 34 37 L 42 54 L 27 41 L 12 54 L 20 37 L 0 33 L 18 26 L 6 13 L 22 18 Z" fill="url(#star-spark-hotstar)"/>
+    <circle cx="27" cy="27" r="4.5" fill="#FFFFFF"/>
+  </g>
+
+  <text x="148" y="54" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="34px" letter-spacing="-0.5px">hotstar</text>
+</svg>

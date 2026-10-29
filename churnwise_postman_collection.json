@@ -1,0 +1,204 @@
+{
+  "info": {
+    "name": "ChurnWise PRO REST API",
+    "_postman_id": "churnwise-api-collection-v1",
+    "description": "Enterprise Customer Intelligence & AI Churn Prediction API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "health"]
+        },
+        "description": "Check if ChurnWise backend server is online"
+      }
+    },
+    {
+      "name": "2. Auth - Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.token) {",
+              "    pm.environment.set('token', jsonData.token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"demo@churnwise.com\",\n  \"password\": \"demo123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "3. Auth - Get Profile (Me)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/auth/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "me"]
+        }
+      }
+    },
+    {
+      "name": "4. Customers - List All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "customers"],
+          "query": [
+            {
+              "key": "search",
+              "value": "Ravi",
+              "disabled": true
+            },
+            {
+              "key": "churn",
+              "value": "Active",
+              "disabled": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. Customers - Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Aarav Sharma\",\n  \"email\": \"aarav.sharma@example.com\",\n  \"phone\": \"+91 98765 11223\",\n  \"company\": \"Vanguard Media Labs\",\n  \"age\": 32,\n  \"gender\": \"Male\",\n  \"tenure\": 6,\n  \"monthlyCharges\": 750,\n  \"contract\": \"Monthly\",\n  \"internetService\": \"Fiber Optic\",\n  \"paymentMethod\": \"Credit Card\",\n  \"supportTickets\": 2,\n  \"churn\": \"Active\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "customers"]
+        }
+      }
+    },
+    {
+      "name": "6. AI Predict - Calculate Churn Risk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Profile\",\n  \"contract\": \"Monthly\",\n  \"monthlyCharges\": 120,\n  \"tenure\": 2,\n  \"supportTickets\": 6,\n  \"paymentMethod\": \"Electronic Check\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/predict/churn",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "predict", "churn"]
+        }
+      }
+    },
+    {
+      "name": "7. AI Predict - What-If Scenario Simulator",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerData\": {\n    \"contract\": \"Monthly\",\n    \"monthlyCharges\": 100,\n    \"tenure\": 6,\n    \"supportTickets\": 4\n  },\n  \"overrides\": {\n    \"contract\": \"Annual\",\n    \"supportTickets\": 1\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/predict/simulate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "predict", "simulate"]
+        }
+      }
+    },
+    {
+      "name": "8. Analytics - Dashboard Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/analytics/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "analytics", "stats"]
+        }
+      }
+    },
+    {
+      "name": "9. Analytics - Cohort & Plan Trends",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/analytics/trends",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "analytics", "trends"]
+        }
+      }
+    }
+  ]
+}

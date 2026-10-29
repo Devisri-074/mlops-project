@@ -1,0 +1,10 @@
+# Add patterns of files dvc should ignore, which could be
+# paths to your local cache, tracking metadata, or large temp files.
+.git/
+.venv/
+node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+mlruns/
+mlflow.db

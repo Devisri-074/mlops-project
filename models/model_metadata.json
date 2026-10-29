@@ -1,0 +1,36 @@
+{
+  "best_model_name": "Gradient_Boosting_Classifier",
+  "trained_at": "2026-10-29T17:53:55.821343+00:00",
+  "dataset": "streaming_churn_dataset.csv",
+  "total_records": 5000,
+  "target_column": "ChurnStatus",
+  "features": {
+    "categorical": [
+      "Platform",
+      "SubscriptionPlan",
+      "DeviceType",
+      "ContractType",
+      "PaymentMethod"
+    ],
+    "numerical": [
+      "TenureMonths",
+      "WeeklyWatchHours",
+      "SupportTickets",
+      "NumProfiles",
+      "MonthlyChargesINR",
+      "TotalChargesINR"
+    ]
+  },
+  "metrics": {
+    "val_accuracy": 0.976,
+    "val_precision": 0.8962,
+    "val_recall": 0.9314,
+    "val_f1_score": 0.9135,
+    "val_roc_auc": 0.994,
+    "test_accuracy": 0.9707,
+    "test_precision": 0.8509,
+    "test_recall": 0.951,
+    "test_f1_score": 0.8981,
+    "test_roc_auc": 0.9898
+  }
+}

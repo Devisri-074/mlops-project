@@ -1,0 +1,18 @@
+{
+  "name": "churnwise-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ChurnWise PRO - Full Stack Customer Intelligence & AI Churn Prediction Platform",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "test": "npm --prefix backend test",
+    "install:all": "npm install && npm --prefix frontend install && npm --prefix backend install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}

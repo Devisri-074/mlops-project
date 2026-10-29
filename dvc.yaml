@@ -1,0 +1,18 @@
+stages:
+  train:
+    cmd: python backend/app/ml/train.py
+    deps:
+      - streaming_churn_dataset.csv
+      - backend/app/ml/train.py
+    outs:
+      - models/best_churn_model.joblib
+      - models/model_metadata.json
+
+  drift_monitor:
+    cmd: python backend/app/ml/drift_monitor.py
+    deps:
+      - streaming_churn_dataset.csv
+      - backend/app/ml/drift_monitor.py
+    outs:
+      - drift_reports/churn_drift_report.html
+      - drift_reports/churn_drift_metrics.json

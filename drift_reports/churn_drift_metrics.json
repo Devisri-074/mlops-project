@@ -1,0 +1,109 @@
+{
+  "status": "success",
+  "generated_at": "2026-10-29T17:54:07.157933+00:00",
+  "monitoring_metadata": {
+    "is_simulated_current_data": true,
+    "evaluation_mode": "Simulated Stress-Test Drift Scenario",
+    "reference_dataset": "streaming_churn_dataset.csv (Authentic Reference Baseline)",
+    "reference_records": 5000,
+    "current_records": 500,
+    "review_notice": "Current dataset is a simulated production shift for faculty review and verification testing. It is not live telemetry."
+  },
+  "drift_summary": {
+    "dataset_drift_detected": false,
+    "drifted_features_count": 2,
+    "total_features": 11,
+    "drift_share": 0.182,
+    "threshold": 0.3
+  },
+  "features": [
+    {
+      "feature": "TenureMonths",
+      "type": "numeric",
+      "drift_detected": false,
+      "drift_score": 0.5041,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 24.09, Current Mean: 24.49"
+    },
+    {
+      "feature": "WeeklyWatchHours",
+      "type": "numeric",
+      "drift_detected": true,
+      "drift_score": 0.0,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 17.94, Current Mean: 14.29"
+    },
+    {
+      "feature": "SupportTickets",
+      "type": "numeric",
+      "drift_detected": true,
+      "drift_score": 0.0,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 1.08, Current Mean: 1.70"
+    },
+    {
+      "feature": "NumProfiles",
+      "type": "numeric",
+      "drift_detected": false,
+      "drift_score": 1.0,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 2.46, Current Mean: 2.47"
+    },
+    {
+      "feature": "MonthlyChargesINR",
+      "type": "numeric",
+      "drift_detected": false,
+      "drift_score": 1.0,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 489.45, Current Mean: 492.70"
+    },
+    {
+      "feature": "TotalChargesINR",
+      "type": "numeric",
+      "drift_detected": false,
+      "drift_score": 0.3452,
+      "test_type": "Kolmogorov-Smirnov",
+      "summary": "Ref Mean: 11748.78, Current Mean: 12181.21"
+    },
+    {
+      "feature": "Platform",
+      "type": "categorical",
+      "drift_detected": false,
+      "drift_score": 0.9782,
+      "test_type": "Total Variation Distance",
+      "summary": "Distribution divergence TVD: 0.022"
+    },
+    {
+      "feature": "SubscriptionPlan",
+      "type": "categorical",
+      "drift_detected": false,
+      "drift_score": 0.984,
+      "test_type": "Total Variation Distance",
+      "summary": "Distribution divergence TVD: 0.016"
+    },
+    {
+      "feature": "DeviceType",
+      "type": "categorical",
+      "drift_detected": false,
+      "drift_score": 0.9814,
+      "test_type": "Total Variation Distance",
+      "summary": "Distribution divergence TVD: 0.019"
+    },
+    {
+      "feature": "ContractType",
+      "type": "categorical",
+      "drift_detected": false,
+      "drift_score": 0.9798,
+      "test_type": "Total Variation Distance",
+      "summary": "Distribution divergence TVD: 0.020"
+    },
+    {
+      "feature": "PaymentMethod",
+      "type": "categorical",
+      "drift_detected": false,
+      "drift_score": 0.978,
+      "test_type": "Total Variation Distance",
+      "summary": "Distribution divergence TVD: 0.022"
+    }
+  ]
+}
